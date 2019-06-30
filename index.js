@@ -3,10 +3,6 @@ const fs = require('fs')
 require('dotenv').config()
 const { SEED_PHRASE, TOKEN, ASERVER, APORT } = process.env
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 const account = algosdk.mnemonicToSecretKey(SEED_PHRASE)
 console.log('Your address', account.addr)
 
@@ -20,10 +16,13 @@ async function main() {
     console.log('\nAirdrop started!')
     for (let recipient of recipients) {
         recipient = recipient.split(',')
-        console.log('isValid', algosdk.isValidAddress(recipient[0]))
+        if (!algosdk.isValidAddress(recipient[0])) {
+            console.log(`The address ${recipient[0]} is invalid.`)
+            continue
+        }
         let txn = { 
             to: recipient[0],
-            fee: 1,
+            fee: 10,
             amount: Number(recipient[1]),
             firstRound: params.lastRound,
             lastRound: endRound,
