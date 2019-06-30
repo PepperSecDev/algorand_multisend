@@ -3,14 +3,17 @@
 [docs](https://developer.algorand.org/docs/javascript-sdk)
 
 
-## run testnet in Docker
+## run testnet in Docker NO PERSISTENT STATE
 ```
-docker run -p 127.0.0.1:8080:8080/tcp -p 127.0.0.1:4180:4180/tcp -it algorand/testnet
+docker run -p 127.0.0.1:8080:8080/tcp -it algorand/testnet
 ./update.sh -d ~/node/data
 ./diagcfg telemetry name -n bob
 ./goal node status -d data
 cat data/algod.token
 ```
+
+## run testnet on MAC
+Install node using guide [here](https://developer.algorand.org/docs/installing-mac) and switch network from mainnet to testnet using [this](https://developer.algorand.org/docs/switching-networks) guide.
 
 ## usefull commands
 ```
