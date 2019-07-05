@@ -10,7 +10,7 @@
 2. `cd algorand_multisend`
 3. `npm install`
 4. `cp recipients.csv.example recipients.csv`
-4. Place your addresses to `recipients.csv` file.
+4. Place your addresses to `recipients.csv` file. (Specify amount in ALGOs)
 5. Put your mnemonic in `.env.example` file (`SEED_PHRASE` parameter)
 6. `cp .env.example .env`
 

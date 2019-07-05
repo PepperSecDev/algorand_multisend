@@ -23,7 +23,7 @@ async function main() {
         let txn = { 
             to: recipient[0],
             fee: 1,
-            amount: Number(recipient[1]),
+            amount: Number(recipient[1]) * 1000000, // amount * 1000000
             firstRound: params.lastRound,
             lastRound: endRound,
             genesisID: params.genesisID,
