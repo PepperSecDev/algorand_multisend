@@ -1,3 +1,24 @@
+# Algorand token multisender
+## Requirements
+
+1. NodeJS v11.2.0 and NPM v6.9.0 (`brew install node`)
+2. Git (`brew install git`)
+
+## Installation
+
+1. `git clone https://github.com/PepperSecDev/algorand_multisend.git`
+2. `cd algorand_multisend`
+3. `npm install`
+4. `cp recipients.csv.example recipients.csv`
+4. Place your addresses to `recipients.csv` file.
+5. Put your mnemonic in `.env.example` file (`SEED_PHRASE` parameter)
+6. `cp .env.example .env`
+
+## Start the app
+1. `node index`
+
+
+# Section for developers
 ## links
 [faucet](https://bank.testnet.algorand.network/)
 [docs](https://developer.algorand.org/docs/javascript-sdk)

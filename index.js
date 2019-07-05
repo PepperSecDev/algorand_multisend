@@ -22,7 +22,7 @@ async function main() {
         }
         let txn = { 
             to: recipient[0],
-            fee: 10,
+            fee: 1,
             amount: Number(recipient[1]),
             firstRound: params.lastRound,
             lastRound: endRound,
@@ -37,7 +37,6 @@ async function main() {
         try {
             tx = await algodclient.sendRawTransaction(signedTxn.blob)
             console.log(`Transaction id for ${recipient[0]}: ` + tx.txId)
-            // await sleep(1000);
             params = await algodclient.getTransactionParams()
             endRound = params.lastRound + 1000
         } catch (e) {
