@@ -7,7 +7,7 @@ const account = algosdk.mnemonicToSecretKey(SEED_PHRASE)
 console.log('Your address', account.addr)
 
 async function main() {
-    let recipients = fs.readFileSync('./recipients.csv', 'utf8')
+    let recipients = fs.readFileSync('./recipients.csv', 'utf8').trim()
     recipients = recipients.split('\n')
     const algodclient = new algosdk.Algod(TOKEN, ASERVER, APORT)
     let params = await algodclient.getTransactionParams()
