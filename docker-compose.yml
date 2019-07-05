@@ -1,0 +1,14 @@
+version: '2'
+
+volumes:
+  algorand_data:
+
+services:
+  algorand_mainnet:
+    image: algorand
+    build: ./
+    ports:
+      - 8080:8080
+    restart: always
+    volumes: 
+      - algorand_data:/algorand

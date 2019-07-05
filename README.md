@@ -19,6 +19,12 @@
 
 
 # Section for developers
+
+## run mainnet node
+1. `docker-compose up -d`
+2. `docker-compose exec algorand_mainnet bash`
+3. `cat /algorand/node/data/algod.token`
+
 ## links
 [faucet](https://bank.testnet.algorand.network/)
 [docs](https://developer.algorand.org/docs/javascript-sdk)
