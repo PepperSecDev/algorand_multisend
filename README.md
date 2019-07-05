@@ -23,7 +23,7 @@
 ## run mainnet node
 1. `docker-compose up -d`
 2. `docker-compose exec algorand_mainnet bash`
-3. `cat /algorand/node/data/algod.token`
+3. `printf '%b\n' "$(cat /algorand/node/data/algod.token)"`
 
 ## links
 [faucet](https://bank.testnet.algorand.network/)
