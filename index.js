@@ -27,8 +27,7 @@ async function main() {
             firstRound: params.lastRound,
             lastRound: endRound,
             genesisID: params.genesisID,
-            genesisHash: params.genesishashb64,
-            // closeRemainderTo: 'MSSLG3APTJX5ICAHO5WZYT65UBEJWH73JRNJTVVIBBGJZAQ26JC5EBMWZY',
+            genesisHash: params.genesishashb64
             // note: new Uint8Array(0) // new Uint8Array(Buffer.from('6gAVR0Nsv5Y=', 'base64'))
         };
 
@@ -40,7 +39,7 @@ async function main() {
             params = await algodclient.getTransactionParams()
             endRound = params.lastRound + 1000
         } catch (e) {
-            console.log(e)
+            console.log(e.text)
         }
     }
 
