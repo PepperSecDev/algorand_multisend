@@ -5,10 +5,15 @@ volumes:
 
 services:
   algorand_mainnet:
-    image: algorand
     build: ./
-    ports:
-      - 8080:8080
     restart: always
     volumes: 
       - algorand_data:/algorand
+    environment:
+      VIRTUAL_HOST: YOUR_HOST_URL
+      LETSENCRYPT_HOST: YOUR_HOST_URL
+
+networks:
+  default:
+    external:
+      name: nginx_default
